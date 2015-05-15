@@ -20,37 +20,28 @@ library
                      , JavaScript.Famous.Surface
                      , JavaScript.Famous.Types
   other-modules:       JavaScript.Famous.Internal
-                     , JavaScript.Famous.Examples
   -- other-extensions:
   build-depends:       base >=4.7 && <4.8
+                     , containers ==0.5.6.2
+                     , data-default ==0.5.3
                      , text ==1.2.0.3
                      , ghcjs-base ==0.1.0.0
                      , ghcjs-dom ==0.1.1.3
-                     , containers ==0.5.6.2
-                     , data-default ==0.5.3
-                     , mtl ==2.2.1
-                     , MaybeT ==0.1.2
   hs-source-dirs:      src
   default-language:    Haskell2010
 
 executable ghcjs-famous
   main-is:             Main.hs
-  other-modules:       JavaScript.Famous
-                     , JavaScript.Famous.Common
-                     , JavaScript.Famous.Generic
-                     , JavaScript.Famous.Highlevel
-                     , JavaScript.Famous.Surface
-                     , JavaScript.Famous.Types
-                     , JavaScript.Famous.Internal
-                     , JavaScript.Famous.Examples
+  other-modules:       JavaScript.Famous.Examples
   -- other-extensions:
   build-depends:       base >=4.7 && <4.8
-                     , text ==1.2.0.3
-                     , ghcjs-base ==0.1.0.0
-                     , ghcjs-dom ==0.1.1.3
                      , containers ==0.5.6.2
                      , data-default ==0.5.3
                      , mtl ==2.2.1
                      , MaybeT ==0.1.2
+                     , text ==1.2.0.3
+                     , ghcjs-base ==0.1.0.0
+                     , ghcjs-dom ==0.1.1.3
+                     , ghcjs-famous
   hs-source-dirs:      src
   default-language:    Haskell2010
