@@ -27,7 +27,10 @@ main = do
                , SfProperties $ M.fromList [ ("backgroundColor", "rgb(240, 238, 233)")
                                            , ("textAlign"      , "center") ] ]
 
-  sf `addToContext` ctx
+  trans ← translate 150 100 0
+  mod ← stateModifier [StModTransform $ trans]
+  node ← mod `modify` ctx
+  sf `addToRenderNode` node
 
   forM_ [1..] $ \i -> do
     threadDelay 1000000

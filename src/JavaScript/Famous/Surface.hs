@@ -36,8 +36,7 @@ surface props = createJS $ foldr step def props
 
 instance IsContent a ⇒ JSCreate (SurfaceProps' a) where
   type JSCreateType (SurfaceProps' a) = Surface
-  createJS SurfaceProps' { .. } = do
-    o ← newObj
+  doCreateJS o SurfaceProps' { .. } = do
     let (.=) ∷ JSString → JSRef a → IO ()
         k .= v = setProp k v o
     ("size"       .=) =<< toJSRef sfSize

@@ -18,6 +18,8 @@ library
                      , JavaScript.Famous.Generic
                      , JavaScript.Famous.Highlevel
                      , JavaScript.Famous.Surface
+                     , JavaScript.Famous.Transform
+                     , JavaScript.Famous.Modifier
                      , JavaScript.Famous.Types
   other-modules:       JavaScript.Famous.Internal
   -- other-extensions:
