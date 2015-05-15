@@ -1,3 +1,9 @@
+Introduction
+------------
+
+This code base is a work in progress. Any comments, suggestions and proposals for changes are
+welcome as this is the first ever Haskell project for the author.
+
 Example code
 ------------
 
