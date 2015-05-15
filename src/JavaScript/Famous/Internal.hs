@@ -12,7 +12,7 @@ foreign import javascript unsafe "console.debug($1)"
   jsDebug ∷ JSRef a → IO ()
 
 foreign import javascript unsafe "famous.core.Engine"
-  engine ∷ Engine
+  engine ∷ IO Engine
 
 foreign import javascript safe "($2).createContext($1)"
   fms_Engine_createContext1 ∷ JSRef HTMLElement → Engine → IO Context
