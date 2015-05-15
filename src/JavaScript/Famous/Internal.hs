@@ -1,5 +1,5 @@
-{-# LANGUAGE JavaScriptFFI             #-}
-{-# LANGUAGE UnicodeSyntax             #-}
+{-# LANGUAGE JavaScriptFFI    #-}
+{-# LANGUAGE UnicodeSyntax    #-}
 
 module JavaScript.Famous.Internal where
 
@@ -20,8 +20,11 @@ foreign import javascript safe "($2).createContext($1)"
 foreign import javascript safe "($1).createContext()"
   fms_Engine_createContext0 ∷                     Engine → IO Context
 
+foreign import javascript safe "$2.add($1)"
+  fms_Context_add ∷ JSRef a → Context → IO RenderNode
+
 foreign import javascript safe "new famous.core.Surface($1)"
   fms_Surface_new ∷ JSRef (SurfaceProps' a) → IO Surface
 
-foreign import javascript safe "$2.add($1)"
-  fms_Context_add ∷ JSRef a → Context → IO RenderNode
+foreign import javascript safe "$2.setContent($1)"
+  fms_Surface_setContent ∷ JSRef a → Surface → IO ()

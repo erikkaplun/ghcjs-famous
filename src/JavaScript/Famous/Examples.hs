@@ -6,9 +6,12 @@ module JavaScript.Famous.Examples where
 import           JavaScript.Famous
 
 import           Control.Applicative ((<$>))
+import           Control.Concurrent  (threadDelay)
+import           Control.Monad       (forM_)
 import           Control.Monad.Maybe (MaybeT (MaybeT), runMaybeT)
 import           Control.Monad.Trans (lift)
 import           Data.Map.Strict     as M
+import           Data.String         (fromString)
 import           GHCJS.DOM           (currentDocument)
 import           GHCJS.DOM.Document  (documentImportNode, documentQuerySelector)
 import           GHCJS.DOM.Types     (Element, Node (..), unElement)
@@ -25,6 +28,11 @@ main = do
                                            , ("textAlign"      , "center") ] ]
 
   sf `addToContext` ctx
+
+  forM_ [1..] $ \i -> do
+    threadDelay 1000000
+    surfaceSetContent (newContent i) sf
+      where newContent i = fromString $ "hello " ++ show i ∷ JSString
 
 getTpl ∷ ToJSString sel ⇒ sel → IO (Maybe Node)
 getTpl sel = runMaybeT $ do

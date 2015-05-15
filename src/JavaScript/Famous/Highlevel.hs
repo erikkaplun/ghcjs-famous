@@ -7,8 +7,9 @@ module JavaScript.Famous.Highlevel (
   jsDebug,
   engine,
   createContext,
-  newSurface,
   addToContext,
+  newSurface,
+  surfaceSetContent,
 ) where
 
 import           JavaScript.Famous.Internal
@@ -26,3 +27,6 @@ addToContext = fms_Context_add
 
 newSurface ∷ JSRef (SurfaceProps' a) → IO Surface
 newSurface = fms_Surface_new
+
+surfaceSetContent ∷ IsContent (JSRef a) ⇒ JSRef a → Surface → IO ()
+surfaceSetContent = fms_Surface_setContent
