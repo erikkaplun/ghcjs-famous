@@ -9,7 +9,22 @@
 {-# LANGUAGE TypeFamilies              #-}
 {-# LANGUAGE UnicodeSyntax             #-}
 
-module JavaScript.Famous.Types where
+module JavaScript.Famous.Types (
+  Attributes,
+  CSSClass,
+  Context,
+  Engine,
+  IsContent,
+  JSCreate (..),
+  Properties,
+  RenderNode,
+  Renderable,
+  Size (..),
+  Surface,
+  SurfaceProp (..),
+  SurfaceProps'(..),
+  SurfaceProps,
+) where
 
 import qualified Data.Map.Strict as M
 import qualified Data.Text       as T
